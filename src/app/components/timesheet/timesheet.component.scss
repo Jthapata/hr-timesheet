@@ -1,7 +1,13 @@
 h2 {
     text-align: center;
 }
-
 .cards {
     margin: auto;
+}
+mat-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 1rem;
 }
