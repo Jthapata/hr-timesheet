@@ -20,7 +20,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatListModule,
     MatFormFieldModule,
     MatInputModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   exports: [
     MatToolbarModule,

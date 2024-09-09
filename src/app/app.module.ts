@@ -10,6 +10,7 @@ import { AnalyticsComponent } from './components/analytics/analytics.component';
 import { TopNavbarComponent } from './components/top-navbar/top-navbar.component';
 import { AnalyticsTableComponent } from './components/analytics-table/analytics-table.component';
 import { MaterialModule } from './modules/material.module';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [ //components associated w this module
@@ -18,7 +19,8 @@ import { MaterialModule } from './modules/material.module';
   imports: [ //all of our imports available to our components
     BrowserModule,
     AppRoutingModule,
-    MaterialModule
+    MaterialModule,
+    FormsModule
   ],
   providers: [ //provice services to our components
     provideAnimationsAsync()
