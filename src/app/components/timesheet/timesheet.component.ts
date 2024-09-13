@@ -24,7 +24,7 @@ export class TimesheetComponent {
   ) {}
 
   ngOnInit(): void {
-    this.departments = this.departmentsService.departments;
+    this.departmentsService.getDepartments().subscribe(departments => {this.departments = departments})
     this.department = this.departments.find(department => department.id === this.route.snapshot.params['id']);
   }
 
