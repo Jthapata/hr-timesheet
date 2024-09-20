@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { DepartmentsService } from '../../services/departments.service';
 import { Department } from '../../interfaces/department';
 import { Router } from '@angular/router';
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'app-departments',
@@ -9,7 +10,8 @@ import { Router } from '@angular/router';
   styleUrl: './departments.component.scss'
 })
 export class DepartmentsComponent {
-  departments!: Department[];
+  // departments!: Department[];
+  departments$: Observable<Department[]> | undefined;
 
   constructor(
     private departmentsService: DepartmentsService,
@@ -17,7 +19,10 @@ export class DepartmentsComponent {
   ) {}
 
   ngOnInit(): void{
-    this.departmentsService.getDepartments().subscribe(departments => {this.departments = departments})
+    // this.departmentsService.getDepartments().subscribe(departments => {
+    //   this.departments = departments
+    // })
+    this.departments$ = this.departmentsService.getDepartments();
   }
 
   goToDepartments(departmentId: string): void{
